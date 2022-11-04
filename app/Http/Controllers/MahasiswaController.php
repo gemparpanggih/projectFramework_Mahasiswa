@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
 use App\Models\Prodi;
+// use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -15,16 +16,23 @@ class MahasiswaController extends Controller
         ]);
     }
 
-    public function indexxx(){
-        $endpoint = "http://localhost:8000/api/mahasiswa";
-        $client = new Client();
+    // public function indexxx(){
+    //     $endpoint = "http://localhost:8000/api/mahasiswa";
+    //     $client = new Client();
 
-        $request = $client->request('GET', $endpoint, [
-            'headers' => [
-                'Accept' => 'application/json',
-            ]
-        ]);
-    }
+    //     $request = $client->request('GET', $endpoint, [
+    //         'headers' => [
+    //             'Accept' => 'application/json',
+    //         ]
+    //     ]);
+
+    //     $data = json_decode($request->getBody(), true);
+
+    //     return view('index')
+    //         ->with('mahasiswas', $data)
+    //         ->with('Title', 'Mahasiswas');
+
+    // }
 
     public function create(){
         return view('mahasiswa.create', [
